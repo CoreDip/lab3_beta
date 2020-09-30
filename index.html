@@ -44,7 +44,7 @@
         </tr>
         <tr>
             <td><input type="button" name="zero" value="0" OnClick="lab3.input.value += '0'"></td>
-			<td><input type="button" value="." OnClick="lab3.input.value += '.'"></td>
+	    <td><input type="button" value="." OnClick="if (lab3.input.value[lab3.input.value.length-1] != '.'){lab3.input.value += '.'}"></td>
             <td><input class="bEquals" type="button" name="doit" value="=" OnClick="lab3.input.value = eval(lab3.input.value)"></td>
             <td><input class="bOperation" type="button" name="add" value="+" OnClick="lab3.input.value += '+'" /></td>
         </tr>
