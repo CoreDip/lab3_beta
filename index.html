@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота 3</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<form name="lab3" action="">
+    <table>
+        <tr>
+            <td colspan=5>
+                <label><input class="TextEdit" name="input" type="text" size=28 value="" width="250px"></label>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" name="+/-" value="+/-" OnClick="lab3.input.value *= '-1'"></td>
+            <td colspan="2">Casio</td>
+            <td><input class="bClear" name="clear" type="Button" value="C" OnClick="lab3.input.value = ''" /></td>
+        </tr>
+        <tr>
+            <td><input type="Button" name="(" value="(" OnClick="lab3.input.value += '('" /></td>
+            <td><input type="Button" name=")" value=")" OnClick="lab3.input.value += ')'" /></td>
+            <td><input class="bOperation" type="button" name="pow2" value="^2" OnClick="
+            for(let i=0; i<lab3.input.value.length-1; i++){
+                if(lab3.input.value[i]=='+' || lab3.input.value[i]=='-' || lab3.input.value[i]=='*' || lab3.input.value[i]=='/' ){
+                    lab3.input.value = eval(lab3.input.value);
+                }
+            }
+            lab3.input.value = Math.pow(lab3.input.value,2);"/></td>
+            <td><input class="bOperation" type="button" name="sqrt" value="√" OnClick="
+            for(let i=0; i<lab3.input.value.length-1; i++){
+                if(lab3.input.value[i]=='+' || lab3.input.value[i]=='-' || lab3.input.value[i]=='*' || lab3.input.value[i]=='/' ){
+                    lab3.input.value = eval(lab3.input.value);
+                }
+            }
+            lab3.input.value = Math.sqrt(lab3.input.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="seven" value="7" OnClick="lab3.input.value += '7'"></td>
+            <td><input type="button" name="eight" value="8" OnClick="lab3.input.value += '8'"></td>
+            <td><input type="button" name="nine" value="9" OnClick="lab3.input.value += '9'"></td>
+			<td><input class="bOperation" type="Button" name="div" value=" / " OnClick="lab3.input.value += '/'" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="four" value="4" OnClick="lab3.input.value += '4'"></td>
+            <td><input type="button" name="five" value="5" OnClick="lab3.input.value += '5'"></td>
+            <td><input type="button" name="six" value="6" OnClick="lab3.input.value += '6'"></td>
+            <td><input class="bOperation" type="Button" name="mul" value="*" OnClick="lab3.input.value += '*'" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="one" value="1" OnClick="lab3.input.value += '1'"></td>
+            <td><input type="button" name="two" value="2" OnClick="lab3.input.value += '2'"></td>
+            <td><input type="button" name="three" value="3" OnClick="lab3.input.value += '3'"></td>
+            <td><input class="bOperation" name="bMinus" type="Button" value="-" OnClick="lab3.input.value += '-'" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="zero" value="0" OnClick="lab3.input.value += '0'"></td>
+			<td><input type="button" value="." OnClick="if (lab3.input.value[lab3.input.value.length-1] != '.'){lab3.input.value += '.'}"></td>
+            <td><input class="bEquals" type="button" name="doit" value="=" OnClick="lab3.input.value = eval(lab3.input.value)"></td>
+            <td><input class="bOperation" type="button" name="add" value="+" OnClick="lab3.input.value += '+'" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
